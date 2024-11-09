@@ -1,0 +1,116 @@
+header {
+    
+    .header-top {
+        background-color: var(--color-primary);
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                color: var(--color-light);
+            }
+
+            .social-media {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+    
+                @include desktop {
+                    display: flex;
+                }
+                
+                .vl {
+                    border-left: 1px solid #606966;
+                    height: 100%;
+                }
+
+                .social {
+                    color: var(--color-light);
+                    transition: 0.25s ease-in-out;
+
+                    &:hover {
+                        color: var(--color-border-secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    .header-menu {
+        background-color: var(--color-gray);
+
+        .container {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 1fr auto;
+            grid-template-areas:  "logo mobile";
+            gap: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+    
+            @include desktop {
+                grid-template-columns: auto 1fr auto;
+                grid-template-areas:  "logo menu search";
+            }
+    
+            #logo { grid-area: logo; }
+    
+            #menu {
+                grid-area: menu; 
+                display: none;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+    
+                @include desktop {
+                    display: block;
+                }
+                
+                nav {
+                    display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+    
+                    @include desktop {
+                        gap: 80px;
+                    }
+    
+                    .menu-link {
+                        font-weight: 700;
+                        color: var(--color-primary);
+                        transition: 0.25s ease-in-out; 
+    
+                        &:hover {    
+                            color: var(--color-secondary);
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+    
+            .search-form { 
+                grid-area: search; 
+                display: none;
+                gap: 15px;
+    
+                @include desktop {
+                    display: flex;
+                }
+            }
+    
+            .btn-menu {
+                grid-area: mobile; 
+                display: block;
+    
+                @include desktop {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}

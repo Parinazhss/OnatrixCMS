@@ -1,0 +1,125 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+	ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var backImg = Model?.Value<IPublishedContent>("backImg")?.Url() ?? "";
+    var backImage = Model?.Value<IPublishedContent>("backImage")?.Url() ?? "";
+    var arrow = Model?.Value<IPublishedContent>("arrow")?.Url() ?? "";
+
+
+
+    var img1 = Model?.Value<IPublishedContent>("img1")?.Url() ?? "";
+
+    var img2 = Model?.Value<IPublishedContent>("img2")?.Url() ?? "";
+
+    var img3 = Model?.Value<IPublishedContent>("img3")?.Url() ?? "";
+
+    var img4 = Model?.Value<IPublishedContent>("img4")?.Url() ?? "";
+
+    var clender = Model?.Value<IPublishedContent>("clender")?.Url() ?? "";
+}
+
+<section class="atf">
+    <img src="@backImg" class="earth-down">
+    <img src="@backImage" class="earth-up">
+
+    <div class="atf-content">
+        <h1>@Model?.Value("header")</h1>
+        <nav class="breadcrumb-nav">
+            <a href="/"> @Model?.Value("homeText")</a>
+            <img src="@arrow">
+            <a href="/projects">@Model?.Value("projectText")</a>
+        </nav>
+    </div>
+</section>
+
+<section id="main-content-section" class="page-section container">
+    <div class="side-content">
+        <div class="project">
+            <div class="project-img">
+                <img src="@img1">
+            </div>
+            <div class="project-text">
+                <div class="project-header">
+                    <h4>@Model?.Value("title1")</h4>
+                    <div class="date-group">
+                        <img src="@clender">
+                        <span>@Model?.Value("date1") </span>
+                    </div>
+                </div>
+
+                <p>@Model?.Value("text1") </p>
+                <a href="#">
+                    <span> @Model?.Value("linkText")</span>
+                  
+                </a>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-img">
+                <img src="@img2" alt="pj2">
+            </div>
+            <div class="project-text">
+                <div class="project-header">
+                    <h4> @Model?.Value("title2") </h4>
+                    <div class="date-group">
+                        <img src="@clender" alt="clender">
+                        <span>@Model?.Value("date2")</span>
+                    </div>
+                </div>
+
+                <p>@Model?.Value("text2") </p>
+                <a href="#">
+                    <span>@Model?.Value("linkText")</span>
+                   
+                </a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img">
+                <img src="@img3" alt="pj3">
+            </div>
+            <div class="project-text">
+                <div class="project-header">
+                    <h4>@Model?.Value("title3")</h4>
+                    <div class="date-group">
+                        <img src="@clender" alt="clender">
+                        <span>@Model?.Value("date3") </span>
+                    </div>
+                </div>
+
+                <p>@Model?.Value("text3")  </p>
+                <a href="#">
+                    <span>@Model?.Value("linkText") </span>
+                    
+                </a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img">
+                <img src="@img4" alt="pj4">
+            </div>
+            <div class="project-text">
+                <div class="project-header">
+                    <h4> @Model?.Value("title4")</h4>
+                    <div class="date-group">
+                        <img src="@clender" alt="clender">
+                        <span>@Model?.Value("date4") </span>
+                    </div>
+                </div>
+
+                <p>@Model?.Value("text4") </p>
+                <a href="#">
+                    <span>@Model?.Value("linkText")</span>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</section>

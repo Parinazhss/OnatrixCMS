@@ -1,0 +1,32 @@
+.logo-section {
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
+
+    .container {
+        
+        .logo-section {
+            padding: 4rem 0;
+            padding-top: 14rem;
+        
+            .container {
+              display: flex;
+              justify-content: space-between;
+              gap: 2rem; 
+            } 
+          }
+
+
+        .logos-box {
+            margin-bottom: 50px;
+            
+            
+            img {
+                padding: 30px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.showcase-success {
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        z-index: 0;
+        
+
+       
+
+        @include desktop {
+            height: 552px;
+            object-fit: cover;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+
+        h1 {
+            font-size: 30px;
+            margin-top: 20px;
+
+            @include desktop {
+                font-size: 70px;
+                margin-top: 95px;
+            }
+        }
+
+        p {
+            color: #4F5955;
+            margin-top: 30px;
+        }
+    }
+}

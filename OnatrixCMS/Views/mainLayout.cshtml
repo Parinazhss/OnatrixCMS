@@ -1,0 +1,73 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = null;
+
+
+    var pageTitle = !string.IsNullOrEmpty(ViewBag.Title) ? $"{ViewBag.Title} | Onatrix - Financial solutions for Your Business" : "Onatrix - Financial solutions for Your Business";
+
+    var logo = Model?.Value<IPublishedContent>("logo")?.Url() ?? "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a576612222.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/scss/colors/theme.css">
+    <title>@pageTitle</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="header-top">
+                <div class="container">
+                    <p>Klarabergsviadukten 90, 111 64 Stockholm</p>
+                    <div class="social-media">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i> </a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-menu">
+                <div class="container">
+                    
+                    <a href="/"><img src="@logo" alt="Logo Image"></a>
+
+                    <div id="menu">
+                        <nav>
+                            <a class="menu-link" href="/about">About</a>
+                            <a class="menu-link" href="/services">Services</a>
+                            <a class="menu-link" href="/projects">Projects</a>
+                            <a class="menu-link" href="/contact">Contact</a>
+                        </nav>
+                    </div>
+
+                    <div class="search-form">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </header>
+
+        <main>
+            @RenderBody()
+        </main>
+
+
+        <footer>
+            <div class="container">
+                <p>© Onatrix. All Rights Reserved. Credits to <span>Themesflat</span></p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

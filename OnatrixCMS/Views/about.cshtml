@@ -1,0 +1,198 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    Layout = "mainLayout.cshtml";
+
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+
+
+
+
+
+
+    var backgroundImgRight = Model?.Value<IPublishedContent>("backgroundImgRight")?.Url() ?? "";
+
+    var backgroundImgLeft = Model?.Value<IPublishedContent>("backgroundImgLeft")?.Url() ?? "";
+
+
+
+    var imgAbout = Model?.Value<IPublishedContent>("imgAbout")?.Url() ?? "";
+
+
+
+
+
+    var imgFeature = Model?.Value<IPublishedContent>("imgFeature")?.Url() ?? "";
+
+
+
+    var imgBraton = Model?.Value<IPublishedContent>("imgBraton")?.Url() ?? "";
+
+
+
+    var img2 = Model?.Value<IPublishedContent>("img2")?.Url() ?? "";
+
+
+
+    var img3 = Model?.Value<IPublishedContent>("img3")?.Url() ?? "";
+
+
+
+    var img4 = Model?.Value<IPublishedContent>("img4")?.Url() ?? "";
+
+
+
+    var img5 = Model?.Value<IPublishedContent>("img5")?.Url() ?? "";
+
+
+
+    var img6 = Model?.Value<IPublishedContent>("img6")?.Url() ?? "";
+
+
+
+  var img7 = Model?.Value<IPublishedContent>("img7")?.Url() ?? "";
+  var image = Model?.Value<IPublishedContent>("image")?.Url() ?? "";
+
+    var backImage = Model?.Value<IPublishedContent>("backImage")?.Url() ?? "";
+}
+
+<section class="about-hero">
+    <img class="img-1" src="@backgroundImgRight" alt="">
+    <img class="img-2" src="@backgroundImgLeft" alt="">
+    <div class="container">
+        <h2>@Model?.Value("pageTitle")</h2>
+        <div class="breadcrumb">
+            <div class="hero-links">
+                <a class="breadcrumb-home" href="/">@Model?.Value("homeText")</a>
+                <i class="fa-solid fa-angle-right"></i>
+                <span><a class="breadcrumb-home" href="/about">@Model?.Value("aboutText")</a></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-us">
+    <div class="container">
+        <div class="ceo">
+            <img src="@imgAbout" alt="Tina Fox - CEO & Founder">
+            <p>@Model.Value("textUnder")</p>
+        </div>
+        <div class="about-us-text">
+            <h4>@Model.Value("headline")</h4>
+            <p>@Model.Value("text")</p>
+
+        </div>
+    </div>
+</section>
+
+<section class="testimonial">
+    <img class="testimonial-img" src="@imgFeature" alt="kevin gardner">
+    <div class="container">
+        <div class="testimonial-review">
+            <span>@Model.Value("textSpan")</span>
+            <h2>@Model.Value("header")</h2>
+            <p class="testimonial-text">
+                @Model.Value("textFeature")
+            </p>
+
+            <p class="signature">@Model.Value("signature")</p>
+            <p class="swebank">@Model.Value("bank")</p>
+        </div>
+    </div>
+</section>
+
+<section class="expert-team">
+    <div class="container">
+        <span>@Model.Value("spanText")</span>
+        <h2>@Model.Value("headerExpert")</h2>
+        <div class="cards">
+            <div class="card">
+                <img class="testimonial-img" src="@imgBraton" alt="">
+                <div class="content">
+                    <h4>@Model.Value("textName1")</h4>
+                    <p>@Model.Value("jobText1")</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="testimonial-img" src="@img2" alt="">
+                <div class="content">
+                    <h4>@Model.Value("name2")</h4>
+                    <p>@Model.Value("job2")</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="testimonial-img" src="@img3" alt="">
+                <div class="content">
+                    <h4>@Model.Value("name3")</h4>
+                    <p>@Model.Value("job3")</p>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img class="testimonial-img" src="@img4" alt="">
+                <div class="content">
+                    <h4>
+                        <@Model.Value("name4")
+                    </h4>
+                    <p>@Model.Value("job4")</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="testimonial-img" src="@img5" alt="">
+                <div class="content">
+                    <h4>@Model.Value("name5")</h4>
+                    <p>@Model.Value("job5")</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="testimonial-img" src="@img6" alt="">
+                <div class="content">
+                    <h4>@Model.Value("name6")</h4>
+                    <p>@Model.Value("job6")</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="testimonial-img" src="@img7" alt="kevin gardner">
+                <div class="content">
+                    <h4>@Model.Value("name7")</h4>
+                    <p>@Model.Value("job7")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <div class="container">
+        <img class="contact-info-guy" src="@image" alt="">
+        <img class="contact-info-background" src="@backImage" alt="">
+        <div class="contact-info">
+            <h2>@Model.Value("headerContact")</h2>
+            <div class="contact-boxes">
+                <div class="box">
+                    <i class="fa-sharp fa-regular fa-location-dot"></i>
+                    <div class="right-text">
+                        <h5>@Model.Value("location")</h5>
+                        <p>@Model.Value("address")</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fa-sharp fa-regular fa-phone-flip"></i>
+                    <div class="right-text">
+                        <h5>@Model.Value("phone")</h5>
+                        <p>@Model.Value("number")</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="right-text">
+                        <h5>@Model.Value("email")</h5>
+                        <p>@Model.Value("emailAddress")</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

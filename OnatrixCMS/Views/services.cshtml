@@ -1,0 +1,81 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+    var a1Img = Model?.Value<IPublishedContent>("a1Img")?.Url() ?? "";
+    var s2Img = Model?.Value<IPublishedContent>("s2Img")?.Url() ?? "";
+    var s3Img = Model?.Value<IPublishedContent>("s3Img")?.Url() ?? "";
+    var s4Img = Model?.Value<IPublishedContent>("s4Img")?.Url() ?? "";
+    var s5Img = Model?.Value<IPublishedContent>("s5Img")?.Url() ?? "";
+    var s6Img = Model?.Value<IPublishedContent>("s5Img")?.Url() ?? "";
+
+
+    var backImg = Model?.Value<IPublishedContent>("backImg")?.Url() ?? "";
+
+    var backImgRight = Model?.Value<IPublishedContent>("backImgRight")?.Url() ?? "";
+}
+<section class="atf">
+    <img src="@backImg" class="earth-down">
+    <img  src="@backImgRight" class="earth-up">
+
+    <div class="atf-content">
+        <h1>@Model?.Value("pageTitle")</h1>
+        <nav class="breadcrumb-nav">
+            <a href="/">@Model.Value("homeT")</a>
+           
+            <a href="/services">@Model.Value("serviceT")</a>
+        </nav>
+    </div>
+</section>
+<section id="our-services-section">
+    <div class="container page-section">
+        <h2>@Model.Value("header")</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h4 class="card-heading">@Model?.Value("s1Header")</h4>
+                <div class="card-image">
+                    <img src= "@a1Img" alt="risk1">
+                </div>
+                <p class="card-body"> @Model?.Value("s1Text")</p>
+            </div>
+            <div class="card">
+                <h4 class="card-heading">@Model?.Value("s2Header")</h4>
+                <div class="card-image">
+                    <img src="@s2Img" alt="risk2">
+                </div>
+                <p class="card-body">@Model?.Value("s2Text") </p>
+            </div>
+            <div class="card">
+                <h4 class="card-heading">@Model?.Value("s3Header")</h4>
+                <div class="card-image">
+                    <img src="@s3Img" alt="risk3">
+                </div>
+                <p class="card-body"> @Model?.Value("s3Text")</p>
+            </div>
+            <div class="card">
+                <h4 class="card-heading">@Model?.Value("s4Header") </h4>
+                <div class="card-image">
+                    <img src="@s4Img" alt="risk4">
+                </div>
+                <p class="card-body"> @Model?.Value("s4Text")</p>
+            </div>
+            <div class="card">
+                <h4 class="card-heading">@Model?.Value("s5Header")</h4>
+                <div class="card-image">
+                    <img src="@s5Img" alt="risk5">
+                </div>
+                <p class="card-body"> @Model?.Value("s5Text")/p>
+            </div>
+            <div class="card">
+                <h4 class="card-heading">@Model?.Value("s6Header") </h4>
+                <div class="card-image">
+                    <img src="@s6Img" alt="risk6">
+                </div>
+                <p class="card-body">@Model?.Value("s6Text") </p>
+            </div>
+        </div>
+    </div>
+</section>

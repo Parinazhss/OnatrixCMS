@@ -1,0 +1,283 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+
+    Layout = "mainLayout.cshtml";
+
+    ViewBag.Title = Model?.Value("pageTitle") ?? null;
+
+
+
+
+
+    var backgroundImage = Model?.Value<IPublishedContent>("heroBackgroundImage")?.Url() ?? "";
+
+    var signatureImage = Model?.Value<IPublishedContent>("aboutSignatureImage")?.Url() ?? "";
+
+
+
+    var imgRisk = Model?.Value<IPublishedContent>("imgRisk")?.Url() ?? "";
+
+    var imgBrands = Model?.Value<IPublishedContent>("imgBrands")?.Url() ?? "";
+
+    var imgA = Model?.Value<IPublishedContent>("imgA")?.Url() ?? "";
+
+    var imgTax = Model?.Value<IPublishedContent>("imgTax")?.Url() ?? "";
+
+    var imgFinance = Model?.Value<IPublishedContent>("imgFinance")?.Url() ?? "";
+
+    var imgAd = Model?.Value<IPublishedContent>("imgAd")?.Url() ?? "";
+
+
+
+    var backImg = Model?.Value<IPublishedContent>("backImg")?.Url() ?? "";
+
+    var img = Model?.Value<IPublishedContent>("img")?.Url() ?? "";
+
+
+
+    var imgWorld = Model?.Value<IPublishedContent>("imgWorld")?.Url() ?? "";
+
+    var imgSuccess = Model?.Value<IPublishedContent>("imgSuccess")?.Url() ?? "";
+
+
+
+    var imgMeet = Model?.Value<IPublishedContent>("imgMeet")?.Url() ?? "";
+
+    var imgBussines = Model?.Value<IPublishedContent>("imgBussines")?.Url() ?? "";
+
+    var imgFin = Model?.Value<IPublishedContent>("imgFin")?.Url() ?? "";
+
+    var imgBud = Model?.Value<IPublishedContent>("imgBud")?.Url() ?? "";
+
+
+
+
+
+
+
+    var logo1 = Model?.Value<IPublishedContent>("logo1")?.Url() ?? "";
+
+    var logo2 = Model?.Value<IPublishedContent>("logo2")?.Url() ?? "";
+
+    var logo3 = Model?.Value<IPublishedContent>("logo3")?.Url() ?? "";
+
+    var logo4 = Model?.Value<IPublishedContent>("logo4")?.Url() ?? "";
+
+    var logo5 = Model?.Value<IPublishedContent>("logo5")?.Url() ?? "";
+
+    var logo6 = Model?.Value<IPublishedContent>("logo6")?.Url() ?? "";
+}
+
+<section class="showcase-success">
+    <img src="@backgroundImage" alt="image of worker">
+    <div class="container">
+        <h1>@Model?.Value("heroHeadline")</h1>
+        <p>@Model?.Value("heroText")</p>
+        <a href="@Model?.Value("heroButtonUrl")" class="btn-primary">@Model?.Value("heroButtonText")</a>
+    </div>
+</section>
+
+<section class="about-us">
+    <div class="container">
+        <div class="about-info-boxes">
+            <div class="about-info">
+                <h6>@Model?.Value("aboutSectionTitle")</h6>
+                <h4>@Model?.Value("aboutHeadline")</h4>
+                <p class="signature-write">@Model?.Value("aboutQuote")</p>
+                <p>@Model?.Value("aboutText")</p>
+                <img src="@signatureImage" alt=@Model?.Value("aboutSignature")>
+                <p>@Model?.Value("aboutSignature")</p>
+            </div>
+            <div class="about-form">
+                <div class="form-header">
+                    <h3>Request a call back</h3>
+                </div>
+                <div class="about-form-text">
+                    <p>Dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="firstname" class="form-control" id="firstname" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <input type="phonenumber" class="form-control" id="phonenumber" placeholder="Phone">
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Financial consulting
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <button class="dropdown-item" type="button">Action</button>
+                                <button class="dropdown-item" type="button">Another action</button>
+                                <button class="dropdown-item" type="button">Something else here</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-secondary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="article-news">
+    <div class="container">
+        <h6>@Model?.Value("title")</h6>
+        <h3> @Model?.Value("headline")</h3>
+        <div class="grid-container">
+            <a href="#">
+                <div class="article-boxes">
+                    <h4>@Model.Value("titleRisk")</h4>
+                    <img src="@imgRisk" alt="">
+                    <p>@Model.Value("textRisk")</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="article-boxes">
+                    <h4>@Model.Value("titleBrands")</h4>
+                    <img src="@imgBrands">
+                    <p>@Model.Value("textBrands")</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="article-boxes">
+                    <h4>@Model.Value("titleAssurance")</h4>
+                    <img src="@imgA" alt="article image">
+                    <p>@Model.Value("textA")</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="article-boxes">
+                    <h4>@Model.Value("titleTax")</h4>
+                    <img src="@imgTax" alt="article image">
+                    <p>@Model.Value("textTax")</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="article-boxes">
+                    <h4>@Model.Value("titleFinance")</h4>
+                    <img src="@imgFinance" alt="article image">
+                    <p>@Model.Value("textFinance")</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="article-boxes">
+                    <h4>@Model.Value("titleAd")</h4>
+                    <img src="@imgAd" alt="article image">
+                    <p>@Model.Value("textAd")</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="our-story">
+    <div class="container">
+        <img class="dotted-map" src="@backImg" alt="dotted world map">
+        <div class="story-header">
+            <h3>@Model.Value("header")</h3>
+            <h3 class="h3-client">@Model.Value("headerClient")</h3>
+            <p>@Model.Value("text")</p>
+            <a class="btn-primary" href="#">@Model.Value("buttomText")</a>
+        </div>
+        <img class="work-team" src="@img" alt="image of staff">
+    </div>
+</section>
+
+<section class="success-stories">
+    <div class="container">
+        <img class="world-dot-map" src="@imgWorld" alt="dotted world map">
+        <div class="header-stories">
+            <h6>@Model.Value("headerStories")</h6>
+            <h2>@Model.Value("textStories")</h2>
+        </div>
+        <div class="success-numbers">
+            <div class="success-headers-numbers">
+                <h1>@Model.Value("num689")</h1>
+                <p>@Model.Value("text689")</p>
+            </div>
+            <div class="success-headers-numbers">
+                <h1>@Model.Value("num370")</h1>
+                <p>@Model.Value("text370")</p>
+            </div>
+            <div class="success-headers-numbers">
+                <h1>@Model.Value("num129")</h1>
+                <p>@Model.Value("text129")</p>
+            </div>
+        </div>
+        <div class="image-video">
+            <img class="video-image" src="@imgSuccess" alt="image of workers">
+        </div>
+    </div>
+    <div class="light-bar"></div>
+</section>
+
+<section class="recent-projects">
+    <div class="container">
+        <div class="project-header">
+            <h6>@Model.Value("headlinePro")</h6>
+            <h2>@Model.Value("headerRe")</h2>
+        </div>
+    </div>
+    <div class="project-grid-boxes">
+        <a href="#">
+            <div class="project-boxes">
+                <img src="@imgMeet" alt="workers in meeting">
+                <div class="project-box-text">
+                    <p class="box-header">@Model.Value("headerMeet")</p>
+                    <p class="box-text">@Model.Value("textMeet")</p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="project-boxes">
+                <img src="@imgBussines" alt="workers in meeting">
+                <div class="project-box-text">
+                    <p class="box-header">@Model.Value("headerBuss")</p>
+                    <p class="box-text">@Model.Value("textMeet")</p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="project-boxes">
+                <img src="@imgFin" alt="workers in meeting">
+                <div class="project-box-text">
+                    <p class="box-header">@Model.Value("headerFin")</p>
+                    <p class="box-text">@Model.Value("textMeet")</p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </a>
+        <a href="#">
+            <div class="project-boxes">
+                <img src="@imgBud" alt="workers in meeting">
+                <div class="project-box-text">
+                    <p class="box-header">@Model.Value("headerBud")</p>
+                    <p class="box-text">@Model.Value("textMeet")</p>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="logo-section">
+    <div class="container">
+
+        <div class="logos-box">
+            <img src="@logo1" alt="logo">
+            <img src="@logo2" alt="logo">
+            <img src="@logo3" alt="logo">
+            <img src="@logo4" alt="logo">
+            <img src="@logo5" alt="logo">
+            <img src="@logo6" alt="logo">
+        </div>
+
+    </div>
+</section>
+
